@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_clone/screens/registerpage.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+
+  static const String id = 'login';
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +97,13 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
 
-                FlatButton(onPressed: (){}, child: Text('Don\'t have an account, sign up here',),),
+                FlatButton(onPressed: (){
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    RegisterPage.id,
+                        (route) => false,
+                  );
+                }, child: Text('Don\'t have an account, sign up here',),),
 
               ],
             ),

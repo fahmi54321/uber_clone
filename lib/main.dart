@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:uber_clone/home.dart';
 import 'package:uber_clone/screens/loginpage.dart';
+import 'package:uber_clone/screens/registerpage.dart';
 
 
 Future<void> main() async {
@@ -22,10 +23,6 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-// void main() {
-//   runApp(const MyApp());
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -39,6 +36,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: LoginPage(),
+
+      /** todo 1 **/
+
+      initialRoute: RegisterPage.id,
+      routes: {
+        RegisterPage.id : (context) => RegisterPage(),
+        LoginPage.id : (context) => LoginPage(),
+      },
     );
   }
 }

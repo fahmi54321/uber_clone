@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:uber_clone/screens/loginpage.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  static const String id = 'register';
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,6 @@ class RegisterPage extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
-
                       TextField(
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
@@ -58,7 +58,6 @@ class RegisterPage extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-
                       TextField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
@@ -77,7 +76,6 @@ class RegisterPage extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-
                       TextField(
                         keyboardType: TextInputType.phone,
                         decoration: InputDecoration(
@@ -96,7 +94,6 @@ class RegisterPage extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-
                       TextField(
                         obscureText: true,
                         decoration: InputDecoration(
@@ -115,7 +112,6 @@ class RegisterPage extends StatelessWidget {
                       SizedBox(
                         height: 40,
                       ),
-
                       RaisedButton(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
@@ -126,16 +122,26 @@ class RegisterPage extends StatelessWidget {
                               height: 50,
                               child: Center(
                                   child: Text(
-                                    'REGISTER',
-                                    style: TextStyle(fontSize: 18, fontFamily: 'Brand-Bold'),
-                                  ))),
+                                'REGISTER',
+                                style: TextStyle(
+                                    fontSize: 18, fontFamily: 'Brand-Bold'),
+                              ))),
                           onPressed: () {}),
                     ],
                   ),
                 ),
-
-                FlatButton(onPressed: (){}, child: Text('Already have a RIDER account? Log in',),),
-
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      LoginPage.id,
+                      (route) => false,
+                    );
+                  },
+                  child: Text(
+                    'Already have a RIDER account? Log in',
+                  ),
+                ),
               ],
             ),
           ),
