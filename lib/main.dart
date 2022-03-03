@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:uber_clone/home.dart';
+import 'package:uber_clone/screens/loginpage.dart';
 
 
 Future<void> main() async {
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Brand-Regular',
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: LoginPage(),
     );
   }
 }
